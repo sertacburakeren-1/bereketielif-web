@@ -1,5 +1,5 @@
 import {publicState} from './publication.js';
-import {$,esc,icon,json,matches,money,menuMasthead,menuInterior} from './shared.js';
+import {$,esc,icon,json,matches,money,menuMasthead,menuInterior,contactHeader,contactFooter,printedWord} from './shared.js?v=6b5fa7262c';
 
 if (!$('cover-logo')) {
   document.querySelector('.mast').innerHTML = menuMasthead();
@@ -7,6 +7,14 @@ if (!$('cover-logo')) {
   main.classList.remove('wrap');
   main.innerHTML = menuInterior();
 }
+
+// A running local server may still hold the previous HTML shell in memory.
+if (!$('contact-top')) {
+  document.querySelector('.mast').insertAdjacentHTML('afterbegin',contactHeader());
+  $('hero-title').innerHTML=printedWord('table','Sofra menüsü');
+  $('menu-title').innerHTML=printedWord('gallery','Kategoriler');
+}
+if (!$('contact-bottom')) document.querySelector('.footer').innerHTML=contactFooter();
 
 const slides = [
   ['adana', 'Adana kebap & kıymalı pide'],

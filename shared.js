@@ -1,6 +1,6 @@
 export const $ = (id) => document.getElementById(id);
 export const esc = (text) => String(text).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
-export function icon(name, size=20) {return '<svg class="icon" aria-hidden="true" width="'+size+'" height="'+size+'"><use href="./icons.svg#'+esc(name)+'"></use></svg>'}
+export function icon(name, size=20) {return '<svg class="icon" aria-hidden="true" width="'+size+'" height="'+size+'"><use href="./icons.svg?v=6b5fa7262c#'+esc(name)+'"></use></svg>'}
 export const norm = text => (text||'').toLocaleLowerCase('tr').normalize('NFD').replace(/\p{M}/gu,'').replaceAll('ı','i');
 export const matches = (item, category, term) => norm([category.name, item.name, item.note].join(' ')).includes(norm(term.trim()));
 export async function json(url, options={}) {
@@ -13,9 +13,42 @@ export const money = amount => new Intl.NumberFormat('tr-TR',{style:'currency',c
 
 
 
+export function printedWord(key, text) {
+  return '<span class="press-script print-'+key+'"><span>'+esc(text)+'</span></span>';
+}
+
+const restaurantContacts = [
+  {key:'call', icon:'phone-call', href:'tel:+903622667471', text:'0 (362) 266 74 71', label:'Telefonla ara: 0 (362) 266 74 71'},
+  {key:'wa', icon:'whatsapp', href:'https://wa.me/903622667471', text:'WhatsApp', label:'WhatsApp ile yaz: 0 (362) 266 74 71'},
+  {key:'instagram', icon:'instagram', href:'https://www.instagram.com/bereketielif/', text:'@bereketielif', label:'Instagram: @bereketielif'}
+];
+
+function contactLinks(label) {
+  const links = restaurantContacts.map(({key,icon:mark,href,text,label:action}) =>
+    '<a class="press-link press-'+key+'" href="'+href+'" aria-label="'+action+'"'+
+    (href.startsWith('https:')?' target="_blank" rel="noopener noreferrer"':'')+'>'+
+    '<span class="press-icon">'+icon(mark,18)+'</span>'+printedWord(key,text)+'</a>'
+  ).join('');
+  return '<nav class="press-links" aria-label="'+label+'">'+links+'</nav>';
+}
+
+export function contactHeader() {
+  return '<div id="contact-top" class="press-top"><div class="wrap press-top-inner">'+
+    '<span class="press-order">'+printedWord('order','Sipariş için')+'</span>'+
+    contactLinks('Üst menü iletişim bağlantıları')+'</div></div>';
+}
+
+export function contactFooter() {
+  return '<div id="contact-bottom" class="press-foot"><div class="wrap press-foot-inner">'+
+    '<div class="pack-illustration" role="img" aria-label="Bereket-i Elif pide kutusu tasarımı"></div>'+
+    '<div class="press-foot-contact"><h2>'+printedWord('contact','Sipariş ve iletişim')+'</h2>'+
+    contactLinks('Alt menü iletişim bağlantıları')+'</div></div>'+
+    '<div class="press-signoff"><span>Birlikte daha iyiyiz.</span></div></div>';
+}
+
 // Rendered on the server and reused when an already-running local server has an earlier page shell.
 export function menuMasthead() {
-  return `<div class="wrap mastin table-nav">
+  return `${contactHeader()}<div class="wrap mastin table-nav">
     <a href="#menu" id="menu-link" class="navmenu">${icon('book',19)}<span>Sofra menüsü</span></a>
     <nav class="house-nav" aria-label="Hızlı kategoriler"><a href="#urunler" data-jump="kahvalti">Kahvaltı</a><i></i><a href="#urunler" data-jump="doner">Döner</a><i></i><a href="#urunler" data-jump="pideler">Pide</a><i></i><a href="#urunler" data-jump="izgaralar">Izgara</a></nav>
     <button id="favorites" class="favorites" type="button" aria-pressed="false">${icon('heart',17)}<span>Favorilerim</span><span id="favcount" class="count">0</span></button>
@@ -56,13 +89,13 @@ export function menuInterior() {
       <div class="paper-content"><p class="paper-kicker"><i></i>Geleneksel Türk mutfağı<i></i></p>
       <img id="cover-logo" src="./bereket-i-elif.webp" width="520" height="235" alt="Bereket-i Elif" fetchpriority="high">
       <div class="ornamental-rule" aria-hidden="true"><i></i><b></b><i></i></div>
-      <h1 id="hero-title">Sofra menüsü</h1><a class="cover-cta" href="#menu">${icon('book',16)} Menüyü incele</a></div>
+      <h1 id="hero-title">${printedWord('table','Sofra menüsü')}</h1><a class="cover-cta" href="#menu">${icon('book',16)} Menüyü incele</a></div>
     </div></div>
     <div class="cover-caption" aria-live="polite"><span class="caption-rule"></span><span id="hero-dish">Adana kebap &amp; kıymalı pide</span></div>
     <div class="slide-buttons"><button type="button" id="prev-slide" aria-label="Önceki sofra fotoğrafı">${icon('left',17)}</button><button type="button" id="next-slide" aria-label="Sonraki sofra fotoğrafı">${icon('right',17)}</button></div>
   </section>
   <section class="catalog wrap" id="menu" aria-labelledby="menu-title">
-    <div class="gallery-head"><h2 id="menu-title">Kategoriler</h2><div class="heading-rule" aria-hidden="true"></div>
+    <div class="gallery-head"><h2 id="menu-title">${printedWord('gallery','Kategoriler')}</h2><div class="heading-rule" aria-hidden="true"></div>
       <div class="rail-buttons"><button type="button" id="rail-prev" aria-label="Önceki kategoriler" aria-controls="categories">${icon('left',19)}</button><button type="button" id="rail-next" aria-label="Sonraki kategoriler" aria-controls="categories">${icon('right',19)}</button></div>
     </div>
     <nav id="categories" class="category-rail" aria-label="Menü kategorileri"></nav>
