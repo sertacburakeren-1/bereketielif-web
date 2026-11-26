@@ -1,0 +1,677 @@
+[
+  {
+    "id": "kahvalti",
+    "name": "Kahvaltı",
+    "icon": "sunrise",
+    "items": [
+      {
+        "id": "kahvalti-mercimek-corbasi",
+        "name": "Mercimek Çorbası"
+      },
+      {
+        "id": "kahvalti-ezogelin-corbasi",
+        "name": "Ezogelin Çorbası"
+      },
+      {
+        "id": "kahvalti-tavuk-suyu-corbasi",
+        "name": "Tavuk Suyu Çorbası"
+      },
+      {
+        "id": "kahvalti-yayla-corbasi",
+        "name": "Yayla Çorbası"
+      },
+      {
+        "id": "kahvalti-kelle-paca",
+        "name": "Kelle Paça"
+      },
+      {
+        "id": "kahvalti-iskembe-corbasi",
+        "name": "İşkembe Çorbası"
+      },
+      {
+        "id": "kahvalti-kahvalti-tabagi",
+        "name": "Kahvaltı Tabağı"
+      },
+      {
+        "id": "kahvalti-menemen",
+        "name": "Menemen"
+      },
+      {
+        "id": "kahvalti-kavurmali-omlet",
+        "name": "Kavurmalı Omlet"
+      }
+    ]
+  },
+  {
+    "id": "doner",
+    "name": "Döner",
+    "icon": "utensils",
+    "items": [
+      {
+        "id": "doner-doner-porsiyon",
+        "name": "Döner Porsiyon"
+      },
+      {
+        "id": "doner-pilav-ustu-doner",
+        "name": "Pilav Üstü Döner"
+      },
+      {
+        "id": "doner-kasarli-doner",
+        "name": "Kaşarlı Döner"
+      },
+      {
+        "id": "doner-doner-beyti",
+        "name": "Döner Beyti"
+      },
+      {
+        "id": "doner-iskender",
+        "name": "İskender"
+      },
+      {
+        "id": "doner-butun-ekmek",
+        "name": "Bütün Ekmek"
+      },
+      {
+        "id": "doner-butun-ekmek-2",
+        "name": "Bütün Ekmek",
+        "note": "İkinci seçenek"
+      },
+      {
+        "id": "doner-tek-lavas",
+        "name": "Tek Lavaş",
+        "note": "50 g"
+      },
+      {
+        "id": "doner-cift-lavas",
+        "name": "Çift Lavaş",
+        "note": "100 g"
+      }
+    ]
+  },
+  {
+    "id": "izgaralar",
+    "name": "Izgaralar",
+    "icon": "flame",
+    "items": [
+      {
+        "id": "izgaralar-et-sis",
+        "name": "Et Şiş"
+      },
+      {
+        "id": "izgaralar-kuzu-sis",
+        "name": "Kuzu Şiş"
+      },
+      {
+        "id": "izgaralar-adana-kebap",
+        "name": "Adana Kebap"
+      },
+      {
+        "id": "izgaralar-adana-durum",
+        "name": "Adana Dürüm"
+      },
+      {
+        "id": "izgaralar-tavuk-pirzola",
+        "name": "Tavuk Pirzola"
+      },
+      {
+        "id": "izgaralar-izgara-kofte",
+        "name": "Izgara Köfte"
+      },
+      {
+        "id": "izgaralar-adana-yogurtlu",
+        "name": "Adana Yoğurtlu"
+      },
+      {
+        "id": "izgaralar-karisik-izgara",
+        "name": "Karışık Izgara"
+      },
+      {
+        "id": "izgaralar-vali-kebabi",
+        "name": "Vali Kebabı"
+      },
+      {
+        "id": "izgaralar-cift-lavas-tavuk",
+        "name": "Çift Lavaş Tavuk"
+      },
+      {
+        "id": "izgaralar-butun-ekmek-tavuk",
+        "name": "Bütün Ekmek Tavuk"
+      },
+      {
+        "id": "izgaralar-cift-lavas-kofte",
+        "name": "Çift Lavaş Köfte"
+      },
+      {
+        "id": "izgaralar-butun-ekmek-kofte",
+        "name": "Bütün Ekmek Köfte"
+      },
+      {
+        "id": "izgaralar-tek-lavas-tavuk",
+        "name": "Tek Lavaş Tavuk"
+      },
+      {
+        "id": "izgaralar-yarim-ekmek-tavuk",
+        "name": "Yarım Ekmek Tavuk"
+      },
+      {
+        "id": "izgaralar-tek-lavas-kofte",
+        "name": "Tek Lavaş Köfte"
+      },
+      {
+        "id": "izgaralar-yarim-ekmek-kofte",
+        "name": "Yarım Ekmek Köfte"
+      }
+    ]
+  },
+  {
+    "id": "kebaplar",
+    "name": "Kebaplar",
+    "icon": "skewer",
+    "items": [
+      {
+        "id": "kebaplar-tas-kebap",
+        "name": "Tas Kebap"
+      },
+      {
+        "id": "kebaplar-beykoz-kebabi",
+        "name": "Beykoz Kebabı"
+      },
+      {
+        "id": "kebaplar-sovalye-kebabi",
+        "name": "Şövalye Kebabı"
+      },
+      {
+        "id": "kebaplar-pureli-kebap",
+        "name": "Püreli Kebap"
+      },
+      {
+        "id": "kebaplar-beyti-kebap",
+        "name": "Beyti Kebap"
+      },
+      {
+        "id": "kebaplar-begendili-kebap",
+        "name": "Beğendili Kebap"
+      },
+      {
+        "id": "kebaplar-ciftlik-kebabi",
+        "name": "Çiftlik Kebabı"
+      },
+      {
+        "id": "kebaplar-orman-kebabi",
+        "name": "Orman Kebabı"
+      },
+      {
+        "id": "kebaplar-saray-kebabi",
+        "name": "Saray Kebabı"
+      },
+      {
+        "id": "kebaplar-lazanya-kebabi",
+        "name": "Lazanya Kebabı"
+      },
+      {
+        "id": "kebaplar-harman-kebabi",
+        "name": "Harman Kebabı"
+      },
+      {
+        "id": "kebaplar-kagit-kebabi",
+        "name": "Kağıt Kebabı"
+      },
+      {
+        "id": "kebaplar-ezme-kebabi",
+        "name": "Ezme Kebabı"
+      },
+      {
+        "id": "kebaplar-bahcivan-kebabi",
+        "name": "Bahçıvan Kebabı"
+      },
+      {
+        "id": "kebaplar-sebzeli-kebap",
+        "name": "Sebzeli Kebap"
+      },
+      {
+        "id": "kebaplar-bostan-kebabi",
+        "name": "Bostan Kebabı"
+      },
+      {
+        "id": "kebaplar-mengen-kebabi",
+        "name": "Mengen Kebabı"
+      }
+    ]
+  },
+  {
+    "id": "tandir",
+    "name": "Tandır ve Güveçler",
+    "icon": "pot",
+    "items": [
+      {
+        "id": "tandir-tepsi-guvec",
+        "name": "Tepsi Güveç"
+      },
+      {
+        "id": "tandir-et-guvec",
+        "name": "Et Güveç"
+      },
+      {
+        "id": "tandir-macar-tava",
+        "name": "Macar Tava"
+      },
+      {
+        "id": "tandir-fransiz-tava",
+        "name": "Fransız Tava"
+      },
+      {
+        "id": "tandir-kalem-yahni",
+        "name": "Kalem Yahni"
+      },
+      {
+        "id": "tandir-sebzeli-et-tandir",
+        "name": "Sebzeli Et Tandır"
+      },
+      {
+        "id": "tandir-et-yahni",
+        "name": "Et Yahni"
+      },
+      {
+        "id": "tandir-papaz-yahni",
+        "name": "Papaz Yahni"
+      },
+      {
+        "id": "tandir-dil-tandir",
+        "name": "Dil Tandır"
+      },
+      {
+        "id": "tandir-dana-tandir",
+        "name": "Dana Tandır"
+      },
+      {
+        "id": "tandir-incik-tandir",
+        "name": "İncik Tandır"
+      },
+      {
+        "id": "tandir-kuzu-kavurma",
+        "name": "Kuzu Kavurma"
+      },
+      {
+        "id": "tandir-kuzu-tandir",
+        "name": "Kuzu Tandır"
+      },
+      {
+        "id": "tandir-kuzu-sarma",
+        "name": "Kuzu Sarma"
+      },
+      {
+        "id": "tandir-ankara-tava",
+        "name": "Ankara Tava"
+      }
+    ]
+  },
+  {
+    "id": "tavuk",
+    "name": "Tavuk Yemekleri",
+    "icon": "drumstick",
+    "items": [
+      {
+        "id": "tavuk-tavuk-sinitzel",
+        "name": "Tavuk Şinitzel"
+      },
+      {
+        "id": "tavuk-tavuk-cop-sis",
+        "name": "Tavuk Çöp Şiş"
+      },
+      {
+        "id": "tavuk-tavuk-kavurma",
+        "name": "Tavuk Kavurma"
+      },
+      {
+        "id": "tavuk-kori-soslu-tavuk",
+        "name": "Köri Soslu Tavuk"
+      },
+      {
+        "id": "tavuk-tavuk-sarma",
+        "name": "Tavuk Sarma"
+      },
+      {
+        "id": "tavuk-sebzeli-tavuk",
+        "name": "Sebzeli Tavuk"
+      },
+      {
+        "id": "tavuk-tavuk-sote",
+        "name": "Tavuk Sote"
+      },
+      {
+        "id": "tavuk-soslu-tavuk",
+        "name": "Soslu Tavuk"
+      },
+      {
+        "id": "tavuk-saray-tophane",
+        "name": "Saray Tophane"
+      },
+      {
+        "id": "tavuk-begendili-tavuk",
+        "name": "Beğendili Tavuk"
+      },
+      {
+        "id": "tavuk-firin-tavuk",
+        "name": "Fırın Tavuk"
+      },
+      {
+        "id": "tavuk-tavuk-tandir",
+        "name": "Tavuk Tandır"
+      },
+      {
+        "id": "tavuk-tavuk-haslama",
+        "name": "Tavuk Haşlama"
+      },
+      {
+        "id": "tavuk-tavuk-ciger",
+        "name": "Tavuk Ciğer"
+      },
+      {
+        "id": "tavuk-tavuk-baget",
+        "name": "Tavuk Baget"
+      },
+      {
+        "id": "tavuk-tavuk-steak",
+        "name": "Tavuk Steak"
+      },
+      {
+        "id": "tavuk-tavuk-cokertme",
+        "name": "Tavuk Çökertme"
+      }
+    ]
+  },
+  {
+    "id": "pideler",
+    "name": "Pide Çeşitleri",
+    "icon": "wheat",
+    "items": [
+      {
+        "id": "pideler-kapali-kasarli",
+        "name": "Kapalı Kaşarlı"
+      },
+      {
+        "id": "pideler-kapali-beyaz-peynirli",
+        "name": "Kapalı Beyaz Peynirli"
+      },
+      {
+        "id": "pideler-kapali-kiymali",
+        "name": "Kapalı Kıymalı"
+      },
+      {
+        "id": "pideler-acik-kiymali",
+        "name": "Açık Kıymalı"
+      },
+      {
+        "id": "pideler-kapali-kiymali-kasarli",
+        "name": "Kapalı Kıymalı Kaşarlı"
+      },
+      {
+        "id": "pideler-acik-kusbasili",
+        "name": "Açık Kuşbaşılı"
+      },
+      {
+        "id": "pideler-acik-karisik",
+        "name": "Açık Karışık"
+      },
+      {
+        "id": "pideler-pastirmali-kasarli",
+        "name": "Pastırmalı Kaşarlı"
+      },
+      {
+        "id": "pideler-kusbasi-kasarli",
+        "name": "Kuşbaşı Kaşarlı"
+      },
+      {
+        "id": "pideler-lahmacun",
+        "name": "Lahmacun"
+      }
+    ]
+  },
+  {
+    "id": "yemekler",
+    "name": "Yemekler",
+    "icon": "soup",
+    "items": [
+      {
+        "id": "yemekler-baldo-pirinc-pilavi",
+        "name": "Baldo Pirinç Pilavı"
+      },
+      {
+        "id": "yemekler-bulgur-pilavi",
+        "name": "Bulgur Pilavı"
+      },
+      {
+        "id": "yemekler-ic-pilav",
+        "name": "İç Pilav"
+      },
+      {
+        "id": "yemekler-kuru-fasulye",
+        "name": "Kuru Fasulye"
+      },
+      {
+        "id": "yemekler-zeytinyagli-taze-fasulye",
+        "name": "Zeytinyağlı Taze Fasulye"
+      },
+      {
+        "id": "yemekler-nohut",
+        "name": "Nohut"
+      },
+      {
+        "id": "yemekler-et-sarma",
+        "name": "Et Sarma"
+      },
+      {
+        "id": "yemekler-et-kavurma",
+        "name": "Et Kavurma"
+      },
+      {
+        "id": "yemekler-dana-rosto",
+        "name": "Dana Rosto"
+      },
+      {
+        "id": "yemekler-karisik-yemek",
+        "name": "Karışık Yemek"
+      },
+      {
+        "id": "yemekler-et-cokertme",
+        "name": "Et Çökertme"
+      },
+      {
+        "id": "yemekler-dana-kapama",
+        "name": "Dana Kapama"
+      },
+      {
+        "id": "yemekler-biftek-sarma",
+        "name": "Biftek Sarma"
+      },
+      {
+        "id": "yemekler-asci-tabagi",
+        "name": "Aşçı Tabağı"
+      },
+      {
+        "id": "yemekler-sac-kavurma",
+        "name": "Saç Kavurma"
+      },
+      {
+        "id": "yemekler-et-haslama",
+        "name": "Et Haşlama"
+      },
+      {
+        "id": "yemekler-kuzu-haslama",
+        "name": "Kuzu Haşlama"
+      },
+      {
+        "id": "yemekler-etli-pilav",
+        "name": "Etli Pilav"
+      },
+      {
+        "id": "yemekler-kadinbudu-kofte",
+        "name": "Kadınbudu Köfte"
+      },
+      {
+        "id": "yemekler-karniyarik",
+        "name": "Karnıyarık"
+      },
+      {
+        "id": "yemekler-kabak-dolma",
+        "name": "Kabak Dolma"
+      },
+      {
+        "id": "yemekler-mantarli-et-sote",
+        "name": "Mantarlı Et Sote"
+      },
+      {
+        "id": "yemekler-karisik-kizartma",
+        "name": "Karışık Kızartma"
+      },
+      {
+        "id": "yemekler-etli-bezelye",
+        "name": "Etli Bezelye"
+      },
+      {
+        "id": "yemekler-kiymali-yumurta",
+        "name": "Kıymalı Yumurta"
+      },
+      {
+        "id": "yemekler-lahana-sarma",
+        "name": "Lahana Sarma"
+      },
+      {
+        "id": "yemekler-coban-kavurma",
+        "name": "Çoban Kavurma"
+      },
+      {
+        "id": "yemekler-et-sote",
+        "name": "Et Sote"
+      },
+      {
+        "id": "yemekler-kalem-pirzola",
+        "name": "Kalem Pirzola"
+      },
+      {
+        "id": "yemekler-carsamba-usulu-keskek",
+        "name": "Çarşamba Usulü Keşkek"
+      },
+      {
+        "id": "yemekler-sogan-yahni",
+        "name": "Soğan Yahni"
+      },
+      {
+        "id": "yemekler-arnavut-cigeri",
+        "name": "Arnavut Ciğeri"
+      },
+      {
+        "id": "yemekler-et-tabagi",
+        "name": "Et Tabağı"
+      }
+    ]
+  },
+  {
+    "id": "salata-tatli",
+    "name": "Salata ve Tatlılar",
+    "icon": "leaf",
+    "items": [
+      {
+        "id": "salata-tatli-mevsim-salata",
+        "name": "Mevsim Salata"
+      },
+      {
+        "id": "salata-tatli-coban-salata",
+        "name": "Çoban Salata"
+      },
+      {
+        "id": "salata-tatli-yogurt",
+        "name": "Yoğurt"
+      },
+      {
+        "id": "salata-tatli-cacik",
+        "name": "Cacık"
+      },
+      {
+        "id": "salata-tatli-sekerpare",
+        "name": "Şekerpare"
+      },
+      {
+        "id": "salata-tatli-firin-sutlac",
+        "name": "Fırın Sütlaç"
+      },
+      {
+        "id": "salata-tatli-sam-tatlisi",
+        "name": "Şam Tatlısı"
+      },
+      {
+        "id": "salata-tatli-kadayif",
+        "name": "Kadayıf"
+      },
+      {
+        "id": "salata-tatli-ekmek-kadayifi",
+        "name": "Ekmek Kadayıfı"
+      },
+      {
+        "id": "salata-tatli-kabak-tatlisi",
+        "name": "Kabak Tatlısı"
+      },
+      {
+        "id": "salata-tatli-bereket-bomba",
+        "name": "Bereket Bomba",
+        "note": "Sütlaç, şekerpare ve bal"
+      },
+      {
+        "id": "salata-tatli-bereket-spesiyal",
+        "name": "Bereket Spesiyal"
+      }
+    ]
+  },
+  {
+    "id": "icecekler",
+    "name": "İçecekler",
+    "icon": "glass",
+    "items": [
+      {
+        "id": "icecekler-kola",
+        "name": "Kola",
+        "note": "300–330 ml"
+      },
+      {
+        "id": "icecekler-fanta",
+        "name": "Fanta",
+        "note": "300–330 ml"
+      },
+      {
+        "id": "icecekler-gazoz",
+        "name": "Gazoz",
+        "note": "300–330 ml"
+      },
+      {
+        "id": "icecekler-meyve-suyu",
+        "name": "Meyve Suyu",
+        "note": "330 ml"
+      },
+      {
+        "id": "icecekler-soguk-cay",
+        "name": "Soğuk Çay"
+      },
+      {
+        "id": "icecekler-acik-ayran",
+        "name": "Açık Ayran"
+      },
+      {
+        "id": "icecekler-salgam",
+        "name": "Şalgam"
+      },
+      {
+        "id": "icecekler-kapali-ayran",
+        "name": "Kapalı Ayran"
+      },
+      {
+        "id": "icecekler-kola-fanta",
+        "name": "Kola – Fanta",
+        "note": "Büyük boy"
+      },
+      {
+        "id": "icecekler-su",
+        "name": "Su"
+      }
+    ]
+  }
+]
