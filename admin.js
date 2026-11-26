@@ -93,11 +93,33 @@ $('save').onclick=async()=>{
  const changes=Object.fromEntries([...drafts].map(([id,value])=>[id,parseAmount(value)]));
  if(Object.values(changes).some(v=>v===undefined))return;
  saving=true;refreshBar();$('admin-items').inert=true;
- try{const next=await openPublication(state,changes); const notice=status('Fiyatları yayınlamak için işletmenin GitHub hesabıyla kaydı onaylayın.');const link=document.createElement('a');link.href=next;link.target='_blank';link.rel='noopener noreferrer';link.textContent='GitHub’da onayla ↗';link.className='solid';notice.append(document.createElement('br'),link);}
+ try{const next=await openPublication(state,changes);pendingPublication={revision:state.revision,changes}; const notice=status('Fiyatları yayınlamak için işletmenin GitHub hesabıyla kaydı onaylayın.');const link=document.createElement('a');link.href=next;link.target='_blank';link.rel='noopener noreferrer';link.textContent='GitHub’da onayla ↗';link.className='solid';notice.append(document.createElement('br'),link);}
  catch(err){status(err.message,true);
  if(err.status===409){conflicts=true;const b=document.createElement('button');b.textContent='Güncel fiyatları yükle';b.onclick=async()=>{if(!confirm('Taslaklarınız silinecek ve son yayınlanan fiyatlar açılacak. Devam edilsin mi?'))return;try{state=await json('/api/menu');drafts.clear();conflicts=false;status('Son yayınlanan fiyatlar yüklendi.');render();}catch(e){status(e.message,true);}};$('admin-status').append(b);}
  }
  finally{saving=false;$('admin-items').inert=false;refreshBar();$('admin-status').scrollIntoView({block:'nearest'});}
 };
+let pendingPublication=null;
+let checkingPublication=false;
+async function checkPublication(){
+ if(!pendingPublication||checkingPublication||document.hidden)return;
+ checkingPublication=true;
+ try{
+   const next=await json('/api/menu');
+   if(next.revision<=pendingPublication.revision)return;
+   const expected=pendingPublication.changes;
+   pendingPublication=null;
+   const matched=Object.entries(expected).every(([id,amount])=>(next.prices[id]??null)===amount);
+   state=next;
+   for(const [id,raw] of drafts)if(parseAmount(raw)===(next.prices[id]??null))drafts.delete(id);
+   render();
+   status(matched?'Fiyatlar yayınlandı. Müşteri menüsü güncellendi.':'Yeni bir fiyat listesi yayınlandı. Kalan taslaklarınızı kontrol edin.',!matched);
+ }catch{
+   // Keep the draft until the published menu can be read.
+ }finally{checkingPublication=false;}
+}
+document.addEventListener('visibilitychange',checkPublication);
+setInterval(checkPublication,10000);
+
 window.addEventListener('beforeunload',e=>{if(drafts.size){e.preventDefault();e.returnValue='';}});start();
 
