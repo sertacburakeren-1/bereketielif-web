@@ -1,6 +1,6 @@
-import {adminRequest as json} from './publication.js?v=e735c3b87e';
-import {$, esc, matches, adminEntrance} from './shared.js?v=e735c3b87e';
-import {applyMenuUpdate, mergeCatalog} from './menu-data.js?v=e735c3b87e';
+import {adminRequest as json} from './publication.js?v=9c21d87240';
+import {$, esc, matches, adminEntrance} from './shared.js?v=9c21d87240';
+import {applyMenuUpdate, mergeCatalog} from './menu-data.js?v=9c21d87240';
 
 let baseCatalog = [], cats = [];
 let state = {revision: 0, prices: {}, products: []};

@@ -1,5 +1,5 @@
-import {json} from './shared.js?v=e735c3b87e';
-import {applyMenuUpdate, validPrice} from './menu-data.js?v=e735c3b87e';
+import {json} from './shared.js?v=9c21d87240';
+import {applyMenuUpdate, validPrice} from './menu-data.js?v=9c21d87240';
 
 let unlocked = false;
 let idsPromise, catalogPromise;

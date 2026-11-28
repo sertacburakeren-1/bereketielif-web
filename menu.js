@@ -1,6 +1,6 @@
-import {publicState} from './publication.js?v=e735c3b87e';
-import {$,esc,icon,json,matches,money,menuMasthead,menuInterior,contactFooter} from './shared.js?v=e735c3b87e';
-import {mergeCatalog} from './menu-data.js?v=e735c3b87e';
+import {publicState} from './publication.js?v=9c21d87240';
+import {$,esc,icon,json,matches,money,menuMasthead,menuInterior,contactFooter} from './shared.js?v=9c21d87240';
+import {mergeCatalog} from './menu-data.js?v=9c21d87240';
 
 if (!$('allergen-note')) {
   document.querySelector('.mast').innerHTML = menuMasthead();
@@ -9,7 +9,7 @@ if (!$('allergen-note')) {
   main.innerHTML = menuInterior();
 }
 
-if (!$('heritage-note')) document.querySelector('.footer').innerHTML=contactFooter();
+if (!$('heritage-note') || document.querySelector('.pide-feature')) document.querySelector('.footer').innerHTML=contactFooter();
 
 const slides = [
   ['adana', 'Adana kebap & kıymalı pide'],

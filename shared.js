@@ -1,6 +1,6 @@
 export const $ = (id) => document.getElementById(id);
 export const esc = (text) => String(text).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
-export function icon(name, size=20) {return '<svg class="icon" aria-hidden="true" width="'+size+'" height="'+size+'"><use href="./icons.svg?v=e735c3b87e#'+esc(name)+'"></use></svg>'}
+export function icon(name, size=20) {return '<svg class="icon" aria-hidden="true" width="'+size+'" height="'+size+'"><use href="./icons.svg?v=9c21d87240#'+esc(name)+'"></use></svg>'}
 export const norm = text => (text||'').toLocaleLowerCase('tr').normalize('NFD').replace(/\p{M}/gu,'').replaceAll('ı','i');
 export const matches = (item, category, term) => norm([category.name, item.name, item.note].join(' ')).includes(norm(term.trim()));
 export async function json(url, options={}) {
@@ -40,7 +40,6 @@ export function contactHeader() {
 
 export function contactFooter() {
   return '<div id="contact-bottom" class="press-foot"><div class="wrap press-foot-inner">'+
-    '<a class="pide-feature" href="#urunler" data-jump="pideler"><img src="./pide.webp" alt="Bereket-i Elif kıymalı pide" width="1536" height="1024" loading="lazy"><span>Pide çeşitlerini keşfet '+icon('right',18)+'</span></a>'+
     '<div class="press-foot-contact"><img class="footer-brand" src="./bereket-i-elif.webp" alt="Bereket-i Elif" width="260" height="118" loading="lazy"><h2>Sipariş ve iletişim</h2>'+
     contactLinks('Alt menü iletişim bağlantıları')+'</div></div>'+
     '<div id="heritage-note" class="wrap heritage-note"><div class="heritage-logos"><div class="heritage-emblem origin-emblem"><img src="./yerli-uretim.png" alt="Yerli Üretim" width="320" height="320" loading="lazy"></div><div class="heritage-emblem anniversary-emblem"><img src="./cumhuriyet-103.png" alt="Cumhuriyetimizin 103. yılı" width="1536" height="1024" loading="lazy"></div></div><span class="heritage-signoff">Birlikte daha iyiyiz.</span></div></div>';

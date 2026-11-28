@@ -2,7 +2,7 @@
 layout: null
 permalink: /admin/
 ---
-<!doctype html><html lang="tr"><head><base href="../"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#132c24"><meta name="description" content="Bereket-i Elif ürün ve fiyat yönetimi."><meta name="robots" content="noindex,nofollow"><title>Menü yönetimi · Bereket-i Elif</title><link rel="icon" href="./lotus.png"><link rel="stylesheet" href="./menu.css?v=e735c3b87e"></head><body><a class="skip" href="#main">İçeriğe geç</a><header class="mast"><div class="wrap mastin"><a href="./" class="brand" aria-label="Bereket-i Elif ana sayfa"><img src="./bereket-i-elif.webp" width="135" height="61" alt="Bereket-i Elif"></a><a class="nav-back" href="./"><svg class="icon" width="18" height="18" aria-hidden="true" focusable="false"><use href="./icons.svg?v=e735c3b87e#book"></use></svg> Menüyü görüntüle</a></div></header>
+<!doctype html><html lang="tr"><head><base href="../"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#132c24"><meta name="description" content="Bereket-i Elif ürün ve fiyat yönetimi."><meta name="robots" content="noindex,nofollow"><title>Menü yönetimi · Bereket-i Elif</title><link rel="icon" href="./lotus.png"><link rel="stylesheet" href="./menu.css?v=9c21d87240"></head><body><a class="skip" href="#main">İçeriğe geç</a><header class="mast"><div class="wrap mastin"><a href="./" class="brand" aria-label="Bereket-i Elif ana sayfa"><img src="./bereket-i-elif.webp" width="135" height="61" alt="Bereket-i Elif"></a><a class="nav-back" href="./"><svg class="icon" width="18" height="18" aria-hidden="true" focusable="false"><use href="./icons.svg?v=9c21d87240#book"></use></svg> Menüyü görüntüle</a></div></header>
   <main id="main" class="wrap admin">
     <div class="eyebrow"><span class="line"></span>Bereket-i Elif · Yönetim</div>
     <h1>Menü yönetimi</h1><p class="intro">Ürün ekleyin, fiyatları düzenleyin ve menünüzü güncelleyin.</p>
@@ -18,17 +18,17 @@ permalink: /admin/
       <form id="login-form" hidden>
         <label for="password">Yönetici parolası</label>
         <div class="entrance-field">
-          <svg class="icon" aria-hidden="true" width="18" height="18"><use href="./icons.svg?v=e735c3b87e#lock"></use></svg>
+          <svg class="icon" aria-hidden="true" width="18" height="18"><use href="./icons.svg?v=9c21d87240#lock"></use></svg>
           <input id="password" name="password" type="password" autocomplete="current-password" autocapitalize="none" spellcheck="false" required>
           <button id="password-visibility" type="button" aria-label="Parolayı göster" aria-pressed="false" aria-controls="password">
-            <span class="show-eye"><svg class="icon" aria-hidden="true" width="20" height="20"><use href="./icons.svg?v=e735c3b87e#eye"></use></svg></span><span class="hide-eye"><svg class="icon" aria-hidden="true" width="20" height="20"><use href="./icons.svg?v=e735c3b87e#eye-off"></use></svg></span>
+            <span class="show-eye"><svg class="icon" aria-hidden="true" width="20" height="20"><use href="./icons.svg?v=9c21d87240#eye"></use></svg></span><span class="hide-eye"><svg class="icon" aria-hidden="true" width="20" height="20"><use href="./icons.svg?v=9c21d87240#eye-off"></use></svg></span>
           </button>
         </div>
         <button class="solid entrance-submit" type="submit">Giriş yap</button>
       </form>
       <a class="solid entrance-submit" href="/signin-with-chatgpt?return_to=%2Fadmin" id="cloud-login" target="_top" hidden>Hesabımla giriş yap</a>
       <div id="entrance-status" class="notice" role="status" hidden></div>
-      <a class="entrance-back" href="./"><svg class="icon" aria-hidden="true" width="17" height="17"><use href="./icons.svg?v=e735c3b87e#book"></use></svg> Sofra menüsüne dön</a>
+      <a class="entrance-back" href="./"><svg class="icon" aria-hidden="true" width="17" height="17"><use href="./icons.svg?v=9c21d87240#book"></use></svg> Sofra menüsüne dön</a>
     </div>
   </div></section>
     <section id="admin-work" hidden>
@@ -43,9 +43,9 @@ permalink: /admin/
           <div class="product-form-actions"><button class="solid" type="submit">Ürünü listeye ekle</button><button type="button" class="text-button" id="cancel-product">Vazgeç</button></div>
         </form>
       </details>
-      <div class="admin-tools"><label class="searchbox"><svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="./icons.svg?v=e735c3b87e#search"></use></svg><input type="search" id="admin-search" placeholder="Ürün ara" aria-label="Ürün ara"></label><label class="filter"><span>Kategori</span><select id="admin-cat"></select></label></div>
+      <div class="admin-tools"><label class="searchbox"><svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="./icons.svg?v=9c21d87240#search"></use></svg><input type="search" id="admin-search" placeholder="Ürün ara" aria-label="Ürün ara"></label><label class="filter"><span>Kategori</span><select id="admin-cat"></select></label></div>
       <div class="admin-table"><div class="thead"><span>Ürün</span><span>Fiyat (₺)</span></div><div id="admin-items"></div></div>
       <div class="savebar"><div><b id="dirty-count">Değişiklik yok</b><small>Fiyatlar KDV dahil olarak girilir.</small></div><button class="solid" id="save" disabled>Değişiklikleri yayınla</button></div>
       <p id="publish-help" class="quiet publish-help"></p>
     </section>
-  </main><footer class="footer"><div class="wrap footin"><img src="./bereket-i-elif.webp" alt="Bereket-i Elif" width="116" height="53"><p>Birlikte daha iyiyiz.</p><a href="./"><svg class="icon" width="15" height="15" aria-hidden="true" focusable="false"><use href="./icons.svg?v=e735c3b87e#book"></use></svg> Sofra menüsü</a></div></footer><script type="module" src="./admin.js?v=e735c3b87e"></script></body></html>
+  </main><footer class="footer"><div class="wrap footin"><img src="./bereket-i-elif.webp" alt="Bereket-i Elif" width="116" height="53"><p>Birlikte daha iyiyiz.</p><a href="./"><svg class="icon" width="15" height="15" aria-hidden="true" focusable="false"><use href="./icons.svg?v=9c21d87240#book"></use></svg> Sofra menüsü</a></div></footer><script type="module" src="./admin.js?v=9c21d87240"></script></body></html>
