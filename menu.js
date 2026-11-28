@@ -1,20 +1,15 @@
-import {publicState} from './publication.js';
-import {$,esc,icon,json,matches,money,menuMasthead,menuInterior,contactHeader,contactFooter,printedWord} from './shared.js?v=41d394810f';
+import {publicState} from './publication.js?v=e735c3b87e';
+import {$,esc,icon,json,matches,money,menuMasthead,menuInterior,contactFooter} from './shared.js?v=e735c3b87e';
+import {mergeCatalog} from './menu-data.js?v=e735c3b87e';
 
-if (!$('cover-logo')) {
+if (!$('allergen-note')) {
   document.querySelector('.mast').innerHTML = menuMasthead();
   const main = $('main');
   main.classList.remove('wrap');
   main.innerHTML = menuInterior();
 }
 
-// A running local server may still hold the previous HTML shell in memory.
-if (!$('contact-top')) {
-  document.querySelector('.mast').insertAdjacentHTML('afterbegin',contactHeader());
-  $('hero-title').innerHTML=printedWord('table','Sofra menüsü');
-  $('menu-title').innerHTML=printedWord('gallery','Kategoriler');
-}
-if (!$('contact-bottom')) document.querySelector('.footer').innerHTML=contactFooter();
+if (!$('heritage-note')) document.querySelector('.footer').innerHTML=contactFooter();
 
 const slides = [
   ['adana', 'Adana kebap & kıymalı pide'],
@@ -36,7 +31,8 @@ $('next-slide').onclick = () => changeSlide(1);
 const storeKey='bereket-elif-favoriler-v1';
 let favs=new Set();
 try{const arr=JSON.parse(localStorage.getItem(storeKey)||'[]');if(Array.isArray(arr))favs=new Set(arr.filter(x=>typeof x==='string'));}catch{}
-let cats=[], prices={}, priceAvailable=false, ready=false;
+let baseCatalog=[], cats=[], prices={}, priceAvailable=false, ready=false;
+let catalogVersion='';
 let active='kahvalti', favoriteView=false;
 const goMenu=()=>$('urunler').scrollIntoView({block:'start'});
 function selectCategory(id) {
@@ -61,7 +57,7 @@ $('rail-prev').onclick=()=>scrollCategories(-1);
 $('rail-next').onclick=()=>scrollCategories(1);
 $('categories').addEventListener('scroll',updateRailButtons,{passive:true});
 window.addEventListener('resize',updateRailButtons,{passive:true});
-document.querySelector('.house-nav').addEventListener('click',event=>{
+document.addEventListener('click',event=>{
   const link=event.target.closest('[data-jump]');
   if(link)selectCategory(link.dataset.jump);
 });
@@ -80,7 +76,9 @@ $('items').onclick=e=>{
 };
 function productRow(item){
   const liked=favs.has(item.id), price=prices[item.id];
-  return '<div class="foodrow"><div><h4>'+esc(item.name)+'</h4>'+(item.note?'<small>'+esc(item.note)+'</small>':'')+'</div><div class="action">'+(Number.isInteger(price)?'<span class="price">'+money(price)+'</span>':'')+'<button class="heartbtn'+(liked?' on':'')+'" type="button" aria-pressed="'+liked+'" aria-label="'+esc(item.name+(item.note?' '+item.note:'')+(liked?' favorilerden çıkar':' favorilere ekle'))+'" data-fav="'+esc(item.id)+'">'+icon('heart',18)+'</button></div></div>';
+  const doner=cats.find(category=>category.id==='doner')?.items.some(product=>product.id===item.id);
+  const notes=[item.note,doner?'%100 yaprak döner':'',item.id==='doner-iskender'?'Tereyağı içerir.':''].filter(Boolean);
+  return '<div class="foodrow"><div><h4>'+esc(item.name)+'</h4>'+(notes.length?'<small>'+esc(notes.join(' · '))+'</small>':'')+'</div><div class="action">'+(Number.isInteger(price)?'<span class="price">'+money(price)+'</span>':'')+'<button class="heartbtn'+(liked?' on':'')+'" type="button" aria-pressed="'+liked+'" aria-label="'+esc(item.name+(item.note?' '+item.note:'')+(liked?' favorilerden çıkar':' favorilere ekle'))+'" data-fav="'+esc(item.id)+'">'+icon('heart',18)+'</button></div></div>';
 }
 function render(){
   $('favcount').textContent=String(favs.size);$('favorites').setAttribute('aria-pressed',String(favoriteView));
@@ -93,6 +91,7 @@ function render(){
   $('section-title').textContent=favoriteView?'Favorilerim':query?'Arama sonuçları':chosen.name;
   $('section-icon').innerHTML=icon(favoriteView?'heart':query?'search':chosen.icon,24);
   $('section-count').textContent=count+' ürün';
+  $('category-note').hidden=grouped||chosen.id!=='doner';
   $('price-note').hidden=!priceAvailable||!groups.some(g=>g.items.some(i=>prices[i.id]==null));
   $('price-note').textContent='Fiyatı görünmeyen ürünler için servis ekibimize danışabilirsiniz.';
   if(!$('categories').childElementCount){
@@ -114,8 +113,16 @@ let loading=false;
 async function load(){
  if(loading)return;loading=true;
  try{
-  if(!ready){cats=await json('./catalog.json');ready=true;const valid=new Set(cats.flatMap(c=>c.items.map(i=>i.id)));favs=new Set([...favs].filter(x=>valid.has(x)));render();}
+  if(!ready){baseCatalog=await json('./catalog.json');cats=baseCatalog;ready=true;render();}
   const data=await publicState();prices=data.prices;priceAvailable=true;$('error').hidden=true;
+  const products=data.products||[];
+  const version=JSON.stringify(products);
+  if(version!==catalogVersion){
+    cats=mergeCatalog(baseCatalog,products);catalogVersion=version;
+    $('categories').innerHTML='';
+    const valid=new Set(cats.flatMap(category=>category.items.map(item=>item.id)));
+    favs=new Set([...favs].filter(id=>valid.has(id)));
+  }
  }catch{prices={};priceAvailable=false;showError(ready?'Güncel fiyatlara ulaşılamadı.':'Menü yüklenemedi.',load);}
  finally{loading=false;render();}
 }

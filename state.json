@@ -1,4 +1,4 @@
 ---
 layout: null
 ---
-{% assign rev = 1 %}{% assign latest = nil %}{% for pair in site.data.fiyatlar %}{% assign entry = pair[1] %}{% if entry.revision > rev %}{% assign latest = entry %}{% assign rev = entry.revision %}{% endif %}{% endfor %}{% if latest %}{{ latest | jsonify }}{% else %}{"revision":1,"values":[[0,23400]]}{% endif %}
+{% comment %}{"revision":1,"values":[[0,23400]]}{% endcomment %}{% assign rev = 1 %}{% assign latest = nil %}{% assign product_rev = -1 %}{% assign product_source = nil %}{% for pair in site.data.fiyatlar %}{% assign entry = pair[1] %}{% if entry.revision > rev %}{% assign latest = entry %}{% assign rev = entry.revision %}{% endif %}{% if entry.products != nil and entry.revision > product_rev %}{% assign product_source = entry %}{% assign product_rev = entry.revision %}{% endif %}{% endfor %}{"revision":{{ rev | jsonify }},"values":{% if latest %}{{ latest.values | jsonify }}{% else %}[[0,23400]]{% endif %},"products":{% if product_source %}{{ product_source.products | jsonify }}{% else %}[]{% endif %}}
