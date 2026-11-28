@@ -1,6 +1,6 @@
 export const $ = (id) => document.getElementById(id);
 export const esc = (text) => String(text).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
-export function icon(name, size=20) {return '<svg class="icon" aria-hidden="true" width="'+size+'" height="'+size+'"><use href="./icons.svg?v=6b5fa7262c#'+esc(name)+'"></use></svg>'}
+export function icon(name, size=20) {return '<svg class="icon" aria-hidden="true" width="'+size+'" height="'+size+'"><use href="./icons.svg?v=41d394810f#'+esc(name)+'"></use></svg>'}
 export const norm = text => (text||'').toLocaleLowerCase('tr').normalize('NFD').replace(/\p{M}/gu,'').replaceAll('ı','i');
 export const matches = (item, category, term) => norm([category.name, item.name, item.note].join(' ')).includes(norm(term.trim()));
 export async function json(url, options={}) {
@@ -103,6 +103,7 @@ export function menuInterior() {
     <section class="menu-paper" id="urunler" aria-labelledby="section-title">
       <div class="menu-paper-head"><div class="section-head"><span class="section-icon" id="section-icon">${icon('sunrise',24)}</span><div><h3 id="section-title">Kahvaltı</h3><span id="section-count" aria-live="polite"></span></div></div>
       <div class="list-tools"><label class="category-select"><span class="sr-only">Kategori seç</span><select id="mobile-category" aria-label="Kategori seç"></select></label><label class="searchbox">${icon('search',17)}<input id="search" type="search" placeholder="Menüde ara" aria-label="Tüm menüde ürün ara" autocomplete="off"></label></div></div>
+      <p id="tax-note" class="price-note">Fiyatlarımıza KDV dahildir.</p>
       <p id="price-note" class="price-note" hidden></p><div id="items"><p class="quiet">Ürünler yükleniyor…</p></div>
     </section>
   </section>`;

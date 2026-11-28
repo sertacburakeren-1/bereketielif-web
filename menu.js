@@ -1,5 +1,5 @@
 import {publicState} from './publication.js';
-import {$,esc,icon,json,matches,money,menuMasthead,menuInterior,contactHeader,contactFooter,printedWord} from './shared.js?v=6b5fa7262c';
+import {$,esc,icon,json,matches,money,menuMasthead,menuInterior,contactHeader,contactFooter,printedWord} from './shared.js?v=41d394810f';
 
 if (!$('cover-logo')) {
   document.querySelector('.mast').innerHTML = menuMasthead();
